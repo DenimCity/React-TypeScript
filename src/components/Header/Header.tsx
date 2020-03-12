@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from '@reach/router'
-import { Store } from '../../context/Store'
 
+import { Store } from '../../context/Store'
 
 export default function Header() {
     const { state } = React.useContext(Store)
