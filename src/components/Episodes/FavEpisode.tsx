@@ -4,6 +4,7 @@ import React, { useContext } from 'react'
 import { IEpisodeProps } from '../../interface'
 import { Store } from '../../context/Store'
 import { toggleFavAction } from '../../context/Actions'
+
 const EpisodeList = React.lazy<any>(() => import('./EpisodesList'))
 
 export default function FavEpisode(): JSX.Element {
@@ -15,16 +16,13 @@ export default function FavEpisode(): JSX.Element {
         toggleFavAction: toggleFavAction,
         favorites: state.favorites
     }
-    console.log("hiiii")
-    console.log("hih favEp", props)
-    return (
 
+    return (
         <React.Suspense fallback={<div>...Loading</div>}>
 
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <EpisodeList {...props} />
             </div>
         </React.Suspense>
-
     )
 }
