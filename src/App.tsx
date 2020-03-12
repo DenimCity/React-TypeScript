@@ -1,22 +1,15 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import './App.css';
-import Header from './components/Header'
-import HomePage from "./HomePage";
-import FavEpisode from "./FavEpisode";
+import Header from './components/Header/Header'
 
 
-export default function App(): JSX.Element {
+
+export default function App(props: any): JSX.Element {
   return (
     <Fragment >
       <Header />
-      <Router>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/favs" component={FavEpisode} />
-        </Switch>
-      </Router>
+      {props.children}
     </Fragment>
   );
 }
